@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>psedex</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		#card{
+			text-align: center;
+			width: 100%;
+		}
+		#roll{
+			background-color : blue;
+			padding: 30px;
+			width: 80px;
+			font-size: 35px;
+			color: white;
+			user-select: none;
+		}
+		#post{
+background-color : blue;
+			padding: 30px;
+			width: 80px;
+			font-size: 35px;
+			color: white;
+			user-select: none;
+		}
+		#comment{
+			width: 500px;
+			height:  75px;
+		}
+	</style>
+</head>
+<body>
+	<div id="card">
+	<h3 id="a1">ID</h3>
+	<h1 id="a2">Company</h1>
+	<h2 id="a3">URL</h2>
+	<center>
+	<table>
+		<tr>
+			<td></td>
+			<td><center>Send a message to Altilunium : </center></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><textarea id="comment"></textarea></td>
+			<td><div id="post" onclick="post()">post</div></td>
+		</tr>
+	</table>
+</center>
+	<p id="a4"></p>
+	</div>
+</body>
+<script>
+
+
+ 
+var json = ""
+var n = 0
+var currentPtr = ""
+
+
+
+
+
+async function post(){
+
+	var ta = document.getElementById('comment')
+	var comment = ta.value.replaceAll("\n","%0A")
+	var package= comment
+	ta.value = ""
+	const nyaa = await fetch("https://api.telegram.org/bot5797899466:AAFC8nPFf4Wz-VfE1RMjVtdz0XEp59-jtdQ/sendMessage?chat_id=-612255971&text="+package);
+
+
+}
+
+
+
+
+</script>
+</html>
